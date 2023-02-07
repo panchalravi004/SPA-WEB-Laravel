@@ -20,7 +20,7 @@
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                             Student</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">200</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$student_count}}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-user-graduate fa-2x text-gray-300"></i>
@@ -38,7 +38,7 @@
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                             Faculty</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">25</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$faculty_count}}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-chalkboard-teacher fa-2x text-gray-300"></i>
@@ -56,7 +56,7 @@
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                             Company</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">25</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$company_count}}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-building fa-2x text-gray-300"></i>
@@ -74,7 +74,7 @@
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                             Jobs</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$jobs_count}}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fab fa-wpforms fa-2x text-gray-300"></i>

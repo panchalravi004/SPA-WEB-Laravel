@@ -4,7 +4,7 @@
 @section('content')
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h4 mb-0 text-gray-800">Add Company</h1>
+        <h1 class="h4 mb-0 text-gray-800">Update Company</h1>
 
         @if (Session::has('error'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -22,7 +22,7 @@
         </a>
     </div>
 
-    <form class="container p-4" method="post" action=" {{ route('create_company') }} ">
+    <form class="container p-4" method="post" action=" {{ route('update_company', ['id'=>$company->COMPANY_ID]) }} ">
         
         @csrf
 
@@ -31,35 +31,35 @@
         <div class="row d-flex justify-content-center align-items-center">
             <div class="form-group col-12">
                 <label for="company_name">Company Name</label>
-                <input type="text" class="form-control" id="company_name" placeholder="Company's Name" name="company_name" required>
+                <input type="text" class="form-control" id="company_name" placeholder="Company's Name" name="company_name" value="{{$company->COMPANY_NAME}}" required>
             </div>
             <div class="form-group col-6">
                 <label for="HR1_name">HR1 Name</label>
-                <input type="text" class="form-control" id="HR1_name" placeholder="HR1's Name" name="HR1_name" required>
+                <input type="text" class="form-control" id="HR1_name" placeholder="HR1's Name" name="HR1_name" value="{{$company->HR1_NAME}}" required>
             </div>
             <div class="form-group col-6">
                 <label for="HR1_email">HR1 Email</label>
-                <input type="text" class="form-control" id="HR1_email" placeholder="HR1 Email" name="HR1_email" required>
+                <input type="text" class="form-control" id="HR1_email" placeholder="HR1 Email" name="HR1_email" value="{{$company->HR1_EMAIL}}" required>
             </div>
             <div class="form-group col-6">
                 <label for="HR2_name">HR2 Name</label>
-                <input type="text" class="form-control" id="HR2_name" placeholder="HR2's Name" name="HR2_name" >
+                <input type="text" class="form-control" id="HR2_name" placeholder="HR2's Name" name="HR2_name" value="{{$company->HR2_NAME}}" >
             </div>
             <div class="form-group col-6">
                 <label for="HR2_email">HR2 Email</label>
-                <input type="text" class="form-control" id="HR2_email" placeholder="HR2 Email" name="HR2_email" >
+                <input type="text" class="form-control" id="HR2_email" placeholder="HR2 Email" name="HR2_email" value="{{$company->HR2_EMAIL}}" >
             </div>
             <div class="form-group col-6">
                 <label for="about">About</label>
-                <input type="text" class="form-control" id="about" placeholder="About" name="about" required>
+                <input type="text" class="form-control" id="about" placeholder="About" name="about" value="{{$company->ABOUT}}" required>
             </div>
             <div class="form-group col-6">
                 <label for="web_domain">Web Domain</label>
-                <input type="text" class="form-control" id="web_domain" placeholder="Web Domain" name="web_domain" required>
+                <input type="text" class="form-control" id="web_domain" placeholder="Web Domain" name="web_domain" value="{{$company->WEB_DOMAIN}}" required>
             </div>
             <div class="form-group col-12">
                 <label for="address">Address</label>
-                <input type="text" class="form-control" id="address" placeholder="Address" name="address" required>
+                <input type="text" class="form-control" id="address" placeholder="Address" name="address" value="{{$company->ADDRESS}}" required>
             </div>
         </div>
         <div class="row justify-content-center align-items-center">
@@ -68,7 +68,13 @@
                 <select id="company_country" class="form-control" name="company_country" onchange="getState()" required>
                     <option value="none" selected disabled hidden>Select Country</option>
                     @foreach ($country as $c)
-                        <option value="{{$c->COUNTRY_ID}}"> {{$c->COUNTRY_NAME}} </option>
+                        @if ($c->COUNTRY_ID == $company->COUNTRY_ID)
+                            
+                            <option value="{{$c->COUNTRY_ID}}" selected> {{$c->COUNTRY_NAME}} </option>
+                        @else
+                            
+                            <option value="{{$c->COUNTRY_ID}}"> {{$c->COUNTRY_NAME}} </option>
+                        @endif
                     @endforeach
                 </select>
             </div>
@@ -77,7 +83,15 @@
 
                 <select id="company_state" class="form-control" name="company_state" onchange="getCity()" required>
                     <option value="none" selected disabled hidden>Select State</option>
-                    
+                    @foreach ($state as $s)
+                        @if ($s->STATE_ID == $company->STATE_ID)
+                            
+                            <option value="{{$s->STATE_ID}}" selected> {{$s->STATE_NAME}} </option>
+                        @else
+                            
+                            <option value="{{$s->STATE_ID}}"> {{$s->STATE_NAME}} </option>
+                        @endif
+                    @endforeach
                 </select>
             </div>
             <div class="form-group col-4">
@@ -85,7 +99,15 @@
 
                 <select id="company_city" class="form-control" name="company_city" required>
                     <option value="none" selected disabled hidden>Select City</option>
-                    
+                    @foreach ($city as $c)
+                        @if ($c->CITY_ID == $company->CITY_ID)
+                            
+                            <option value="{{$c->CITY_ID}}" selected> {{$c->CITY_NAME}} </option>
+                        @else
+                            
+                            <option value="{{$c->CITY_ID}}"> {{$c->CITY_NAME}} </option>
+                        @endif
+                    @endforeach
                 </select>
             </div>
         </div>
