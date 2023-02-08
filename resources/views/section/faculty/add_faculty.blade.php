@@ -26,18 +26,18 @@
         @csrf
         <h4 class="text-secondary">Personal Information</h4>
         <div class="row d-flex justify-content-center align-items-center">
-            <div class="form-group col-4">
+            <div class="form-group col-12 col-lg-4">
                 <label for="faculty_id">Faculty Id </label>
                 <input type="text" class="form-control" placeholder="Faculty Id" name="faculty_id" id="faculty_id" required>
 
             </div>
-            <div class="form-group col-4">
+            <div class="form-group col-12 col-lg-4">
                 <label for="faculty_name">Name</label>
                 <input type="text" class="form-control" placeholder="Faculty Name" name="faculty_name" id="faculty_name" required>
 
             </div>
             
-            <div class="form-group col-4">
+            <div class="form-group col-12 col-lg-4">
                 <label for="faculty_email">Email</label>
                 <input type="email" class="form-control" placeholder="Faculty Name" name="faculty_email" id="faculty_email" required>
 
@@ -47,7 +47,7 @@
         <div class="row justify-content-center align-items-center">
             
 
-            <div class="form-group col-4">
+            <div class="form-group col-12 col-lg-4">
                 <label for="faculty_gender">Gender</label>
 
                 <select class="form-control" name="faculty_gender" id="faculty_gender" required>
@@ -58,7 +58,7 @@
                 </select>
             </div>
             
-            <div class="form-group col-8">
+            <div class="form-group col-12 col-lg-8">
                 <label for="faculty_mob_no">Mobile No.</label>
                 <!-- <input type="text" pattern="[6-9]{1}[0-9]{9}" class="form-control" placeholder="Contact no of Student" name="stud_mob_no" id="id_stud_mob_no" required> -->
                 <input type="text" class="form-control" placeholder="Contact no of Faculty" name="faculty_mob_no" id="faculty_mob_no" required>
@@ -72,7 +72,7 @@
 
         <div class="row justify-content-center align-items-center">
             
-            <div class="form-group col-4">
+            <div class="form-group col-12 col-lg-4">
                 <label for="faculty_university">University Name</label>
 
                 <select class="form-control" name="faculty_university" id="faculty_university" onchange="getCollege()" required>
@@ -83,7 +83,7 @@
                     @endforeach
                 </select>
             </div>
-            <div class="form-group col-4">
+            <div class="form-group col-6 col-lg-4">
                 <label for="faculty_college">College Name</label>
 
                 <select class="form-control" name="faculty_college" id="faculty_college" onchange="getDepartment()" required>
@@ -91,7 +91,7 @@
                     
                 </select>
             </div>
-            <div class="form-group col-4">
+            <div class="form-group col-6 col-lg-4">
                 <label for="faculty_department">Department</label>
 
                 <select class="form-control" name="faculty_department" id="faculty_department" required>
@@ -107,7 +107,7 @@
 
         <div class="row justify-content-between align-items-center">
             
-            <div class="form-group col-3">
+            <div class="form-group col-6 col-lg-3">
                 <label for="faculty_can_update_company">Update Company</label>
 
                 <select class="form-control" name="faculty_can_update_company" id="faculty_can_update_company" required>
@@ -117,7 +117,7 @@
                 </select>
             </div>
 
-            <div class="form-group col-3">
+            <div class="form-group col-6 col-lg-3">
                 <label for="faculty_can_make_job_post">Make Job Post</label>
 
                 <select class="form-control" name="faculty_can_make_job_post" id="faculty_can_make_job_post" required>
@@ -126,7 +126,7 @@
                     <option value="0">No</option>
                 </select>
             </div>
-            <div class="form-group col-3">
+            <div class="form-group col-6 col-lg-3">
                 <label for="faculty_can_reject_job_application">Reject Job Application</label>
 
                 <select class="form-control" name="faculty_can_reject_job_application" id="faculty_can_reject_job_application" required>
@@ -135,7 +135,7 @@
                     <option value="0">No</option>
                 </select>
             </div>
-            <div class="form-group col-3">
+            <div class="form-group col-6 col-lg-3">
                 <label for="faculty_role">Role</label>
 
                 <select class="form-control" name="faculty_role" id="faculty_role" required>

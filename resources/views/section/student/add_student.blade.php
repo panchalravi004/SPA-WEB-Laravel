@@ -28,28 +28,28 @@
         
         <h4 class="text-secondary">Personal Information</h4>
         <div class="row d-flex justify-content-center align-items-center">
-            <div class="form-group col-4">
+            <div class="form-group col-12 col-lg-4">
                 <label for="student_id">Student Id </label>
                 <input type="text" class="form-control" placeholder="Student Id" name="student_id" id="student_id" >
 
             </div>
-            <div class="form-group col-4">
+            <div class="form-group col-12 col-lg-4">
                 <label for="student_name">Name</label>
                 <input type="text" class="form-control" placeholder="Student's Name" name="student_name" id="student_name" >
 
             </div>
-            <div class="form-group col-4">
+            <div class="form-group col-12 col-lg-4">
                 <label for="student_email">Email</label>
                 <input type="text" pattern="[^ @]*@[^ @]*" validate=":true" class="form-control" placeholder="Email" name="student_email" id="student_email">
             </div>
         </div>
         <div class="row justify-content-center align-items-center">
-            <div class="form-group col-2">
+            <div class="form-group col-6 col-lg-2">
                 <label for="student_dob">Date Of Birth</label>
                 <input type="date" min="1985-01-01" class="form-control" placeholder="DOB of Student" name="student_dob" id="student_dob" >
             </div>
 
-            <div class="form-group col-2">
+            <div class="form-group col-6 col-lg-2">
                 <label for="student_gender">Gender</label>
 
                 <select class="form-control" name="student_gender" id="student_gender" >
@@ -59,19 +59,19 @@
                     <option value="O">Other</option>
                 </select>
             </div>
-            <div class="form-group col-4">
+            <div class="form-group col-12 col-lg-4">
                 <label for="student_whatsapp_no">Mobile no(Whatsapp no)</label>
                 <input type="text" class="form-control" placeholder="Contact Whatsapp No(Optional)" name="student_whatsapp_no" id="student_whatsapp_no">
 
             </div>
-            <div class="form-group col-4">
+            <div class="form-group col-12 col-lg-4">
                 <label for="student_mob_no">Mobile No.</label>
                 <!-- <input type="text" pattern="[6-9]{1}[0-9]{9}" class="form-control" placeholder="Contact no of Student" name="stud_mob_no" id="id_stud_mob_no" > -->
                 <input type="text" class="form-control" placeholder="Contact no of Student" name="student_mob_no" id="student_mob_no" >
             </div>
         </div>
         <div class="row justify-content-center align-items-center">
-            <div class="form-group col-2">
+            <div class="form-group col-6 col-lg-2">
                 <label for="student_country">Country</label>
                 <!-- <input type="text" class="form-control" placeholder="Country Name" name="student_country" id="student_country" > -->
 
@@ -84,7 +84,7 @@
                 </select>
 
             </div>
-            <div class="form-group col-2">
+            <div class="form-group col-6 col-lg-2">
                 <label for="student_state">State</label>
 
                 <select class="form-control" name="student_state" id="student_state" onchange="getCity()" >
@@ -92,7 +92,7 @@
                     
                 </select>
             </div>
-            <div class="form-group col-2">
+            <div class="form-group col-6 col-lg-2">
                 <label for="student_city">City</label>
 
                 <select class="form-control" name="student_city" id="student_city" >
@@ -100,12 +100,12 @@
                     
                 </select>
             </div>
-            <div class="form-group col-2">
+            <div class="form-group col-6 col-lg-2">
                 <label for="student_pincode">Pin code</label>
                 <input type="text" pattern="([1-9]{1}[0-9]{5}|[1-9]{1}[0-9]{3}\\s[0-9]{3})" class="form-control" placeholder="Pin Code" name="student_pincode" id="student_pincode" >
             </div>
 
-            <div class="form-group col-4">
+            <div class="form-group col-12 col-lg-4">
                 <label for="student_street">Address</label>
                 <input type="text" class="form-control" placeholder="Address" name="student_street" id="student_street" >
             </div>
@@ -118,7 +118,7 @@
         <h4 class="text-secondary">Acadmic Details</h4>
 
         <div class="row justify-content-center align-items-center">
-            <div class="form-group col-2">
+            <div class="form-group col-6 col-lg-2">
                 <label for="student_primary_skill">Primary Skill</label>
 
                 <select class="form-control" name="student_primary_skill" id="student_primary_skill" >
@@ -130,7 +130,7 @@
                 </select>
             </div>
 
-            <div class="form-group col-2">
+            <div class="form-group col-6 col-lg-2">
                 <label for="student_secondary_skill">Secondary Skill</label>
 
                 <select class="form-control" name="student_secondary_skill" id="student_secondary_skill" >
@@ -140,7 +140,7 @@
                     @endforeach
                 </select>
             </div>
-            <div class="form-group col-2">
+            <div class="form-group col-6 col-lg-2">
                 <label for="student_tertiary_skill">Tertiary Skill</label>
 
                 <select class="form-control" name="student_tertiary_skill" id="student_tertiary_skill" >
@@ -150,11 +150,11 @@
                     @endforeach
                 </select>
             </div>
-            <div class="form-group col-2">
+            <div class="form-group col-6 col-lg-2">
                 <label for="student_academic_session">Academic Session</label>
                 <input type="text" class="form-control" placeholder="Enter Student Acadmic Session" name="student_academic_session" id="student_academic_session" >
             </div>
-            <div class="form-group col-2">
+            <div class="form-group col-6 col-lg-2">
                 <label for="student_session_start_month">Session Start Month</label>
 
                 <select class="form-control" name="student_session_start_month" id="student_session_start_month" >
@@ -164,7 +164,7 @@
                     @endforeach
                 </select>
             </div>
-            <div class="form-group col-2">
+            <div class="form-group col-6 col-lg-2">
                 <label for="student_academic_level">Academic Level</label>
                 <input type="text" class="form-control" placeholder="Acadmic Level" name="student_academic_level" id="student_academic_level" >
             </div>
@@ -172,7 +172,7 @@
         </div>
 
         <div class="row justify-content-center align-items-center">
-            <div class="form-group col-4">
+            <div class="form-group col-12 col-lg-4">
                 <label for="student_university">University Name</label>
 
                 <select class="form-control" name="student_university" id="student_university" onchange="getCollege()"  >
@@ -184,7 +184,7 @@
 
                 </select>
             </div>
-            <div class="form-group col-2">
+            <div class="form-group col-6 col-lg-2">
                 <label for="student_college">College Name</label>
 
                 <select class="form-control" name="student_college" id="student_college" onchange="getDepartment()" >
@@ -192,7 +192,7 @@
                     
                 </select>
             </div>
-            <div class="form-group col-2">
+            <div class="form-group col-6 col-lg-2">
                 <label for="student_department">Department</label>
 
                 <select class="form-control" name="student_department" id="student_department" >
@@ -201,7 +201,7 @@
             </div>
 
             
-            <div class="form-group col-2">
+            <div class="form-group col-6 col-lg-2">
                 <label for="student_sem">Semester</label>
 
                 <select class="form-control" name="student_sem" id="student_sem" >
@@ -211,31 +211,31 @@
                     @endforeach
                 </select>
             </div>
-            <div class="form-group col-2">
+            <div class="form-group col-6 col-lg-2">
                 <label for="student_section">Student Section</label>
                 <input type="text" class="form-control" placeholder="Student Section" name="student_section" id="student_section">
             </div>
         </div>
         <div class="row justify-content-center align-items-center">
-            <div class="form-group col-4">
+            <div class="form-group col-4 col-lg-4">
                 <label for="student_ssc_score_type">SSC Score In</label>
                 <select class="form-control" name="student_ssc_score_type" id="student_ssc_score_type" >
                     <option value="percentage">Percentage</option>
                     <option value="cgpa">CGPA</option>
                 </select>
             </div>
-            <div class="form-group col-4">
+            <div class="form-group col-4 col-lg-4">
                 <label for="student_ssc_score">SSC Score</label>
                 <input type="text" class="form-control" placeholder="SSC Marks" name="student_ssc_score" id="student_ssc_score" >
             </div>
-            <div class="form-group col-4">
+            <div class="form-group col-4 col-lg-4">
                 <label for="student_ssc_year">SSC Pass Year</label>
                 <input type="text" class="form-control" placeholder="SSC Pass Year" name="student_ssc_year" id="student_ssc_year" >
             </div>
             
         </div>
         <div class="row justify-content-center align-items-center">
-            <div class="form-group col-4">
+            <div class="form-group col-12 col-lg-4">
                 <label for="student_hsc_stream">HSC Stream</label>
                 <select class="form-control" name="student_hsc_stream" id="student_hsc_stream" >
                     <option value="none" selected disabled hidden>Select</option>
@@ -244,24 +244,24 @@
                     @endforeach
                 </select>
             </div>
-            <div class="form-group col-2">
+            <div class="form-group col-4 col-lg-2">
                 <label for="student_hsc_score_type">HSC Score In</label>
                 <select class="form-control" name="student_hsc_score_type" id="student_hsc_score_type" >
                     <option value="percentage">Percentage</option>
                     <option value="cgpa">CGPA</option>
                 </select>
             </div>
-            <div class="form-group col-3">
+            <div class="form-group col-4 col-lg-3">
                 <label for="student_hsc_score">HSC Score</label>
                 <input type="text" class="form-control" placeholder="HSC Marks" name="student_hsc_score" id="student_hsc_score" >
             </div>
-            <div class="form-group col-3">
+            <div class="form-group col-4 col-lg-3">
                 <label for="student_hsc_year">Hsc Pass Year</label>
                 <input type="text" class="form-control" placeholder="HSC Pass Year" name="student_hsc_year" id="student_hsc_year" >
             </div>
         </div>
         <div class="row justify-content-center align-items-center">
-            <div class="form-group col-4">
+            <div class="form-group col-12 col-lg-4">
                 <label for="student_ug_stream">UG Stream</label>
                 <select class="form-control" name="student_ug_stream" id="student_ug_stream" >
                     <option value="none" selected disabled hidden>Select</option>
@@ -270,7 +270,7 @@
                     @endforeach
                 </select>
             </div>
-            <div class="form-group col-2">
+            <div class="form-group col-4 col-lg-2">
                 <label for="student_ug_score_type">UG Score In</label>
 
                 <select class="form-control" name="student_ug_score_type" id="student_ug_score_type" >
@@ -278,18 +278,18 @@
                     <option value="cgpa">CGPA</option>
                 </select>
             </div>
-            <div class="form-group col-3">
+            <div class="form-group col-4 col-lg-3">
                 <label for="student_ug_score">UG Score</label>
                 <input type="text" class="form-control" placeholder="UG Marks" name="student_ug_score" id="student_ug_score" >
             </div>
-            <div class="form-group col-3">
+            <div class="form-group col-4 col-lg-3">
                 <label for="student_ug_year">UG Pass Year</label>
                 <input type="text" class="form-control" placeholder="UG Year" name="student_ug_year" id="student_ug_year" >
             </div>
             
         </div>
         <div class="row justify-content-center align-items-center">
-            <div class="form-group col-4">
+            <div class="form-group col-12 col-lg-4">
                 <label for="student_pg_stream">PG Stream</label>
                 <select class="form-control" name="student_pg_stream" id="student_pg_stream" >
                     <option value="none" selected disabled hidden>Select</option>
@@ -299,7 +299,7 @@
                 </select>
 
             </div>
-            <div class="form-group col-2">
+            <div class="form-group col-4 col-lg-2">
 
                 <label for="student_pg_score_type">PG Score In</label>
                 <select class="form-control" name="student_pg_score_type" id="student_pg_score_type" >
@@ -307,11 +307,11 @@
                     <option value="cgpa">CGPA</option>
                 </select>
             </div>
-            <div class="form-group col-3">
+            <div class="form-group col-4 col-lg-2">
                 <label for="student_pg_score">PG Score</label>
                 <input type="text" class="form-control" placeholder="PG Marks" name="student_pg_score" id="student_pg_score">
             </div>
-            <div class="form-group col-3">
+            <div class="form-group col-4 col-lg-2">
                 <label for="student_pg_year">PG Pass Year</label>
                 <input type="text" class="form-control" placeholder="PG Pass Year" name="student_pg_year" id="student_pg_year">
             </div>
@@ -324,7 +324,7 @@
         <h4 class="text-secondary">Permission</h4>
 
         <div class="row justify-content-around align-items-center">
-            <div class="form-group col-3">
+            <div class="form-group col-12 col-lg-3">
                 <label for="student_can_update_sem_result">Update Sem Result</label>
 
                 <select class="form-control" name="student_can_update_sem_result" id="student_can_update_sem_result" >
@@ -334,7 +334,7 @@
                 </select>
             </div>
 
-            <div class="form-group col-3">
+            <div class="form-group col-12 col-lg-3">
                 <label for="student_can_update_profile">Can Update Profile</label>
 
                 <select class="form-control" name="student_can_update_profile" id="student_can_update_profile" >

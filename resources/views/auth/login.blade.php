@@ -22,27 +22,30 @@
 
 </head>
 
-<body class="bg-gradient-success">
+<body class="bg-light">
 
     <div class="container">
 
         <!-- Outer Row -->
-        <div class="row justify-content-center">
+        <div class="row justify-content-center ">
 
             <div class="col-xl-10 col-lg-12 col-md-9">
 
-                <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card o-hidden border border-light shadow my-5">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
                             <!--- bg-login-image ----->
-                            <div class="col-lg-6 d-none d-lg-flex " style="background-color: rgb(228, 228, 228)">
-                                <div class="container">
+                            <div class="col-lg-5 d-none d-lg-flex rounded" style="background-color: rgb(228, 228, 228);">
+                                <div class="container ">
                                     <div class="d-flex justify-content-center align-items-center h-100">
                                         <div class="box text-center">
                                             <!-- your content goes here -->
-                                            <h3 class="p-3 badge-primary rounded" style="background-color: rgb(56, 0, 160);">ADMIN</h3>
-                                            <img src="{{ url('img/admin-image.png') }}" class="rounded" width="280" height="190" alt="">
+                                            {{-- <img src="{{ url('img/admin-image.png') }}" class="rounded" width="280" height="190" alt=""> --}}
+                                            <span class="badge ">
+                                                <i class="fa fa-user display-2" aria-hidden="true" style="color: rgb(0, 48, 119);"></i>
+                                            </span>
+                                            <h3 class="p-3 badge-primary rounded" style="background-color: rgb(0, 48, 119);">ADMIN</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -73,7 +76,7 @@
                                                 id="password" name="password" placeholder="Password">
                                         </div>
                                         
-                                        <input type="submit" value="Login" class="btn btn-primary btn-user btn-block">
+                                        <input type="submit" value="LOGIN" class="btn btn-primary btn-user btn-block">
 
                                         <hr>
                                         {{-- <a href="index.html" class="btn btn-google btn-user btn-block">

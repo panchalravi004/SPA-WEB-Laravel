@@ -28,7 +28,7 @@
         <h4 class="text-secondary">Job Information</h4>
         <br>
         <div class="row d-flex justify-content-center align-items-center">
-            <div class="form-group col-6">
+            <div class="form-group col-12 col-lg-6">
                 <label for="comapny_name">Company Name</label>
 
                 <select id="comapny_name" class="form-control" name="comapny_name" required>
@@ -48,34 +48,34 @@
 
                 </select>
             </div>
-            <div class="form-group col-6">
+            <div class="form-group col-12 col-lg-6">
                 <label for="job_role">Job Role </label>
                 <input type="text" class="form-control" id="job_role" placeholder="Job Role In Company" name="job_role" value="{{$job->ROLE}}" required>
 
             </div>
-            <div class="form-group col-6">
+            <div class="form-group col-12 col-lg-6">
                 <label for="required_skill">Required Skill</label>
                 <input type="text" class="form-control" id="required_skill" placeholder="ex. Java, Python" name="required_skill" value="{{$job->SKILLS}}" required>
             </div>
 
-            <div class="form-group col-6">
+            <div class="form-group col-12 col-lg-6">
                 <label for="minimum_qualification">Minimum Qualification</label>
                 <input type="text" class="form-control" id="minimum_qualification" placeholder="ex. BCA , MCA" name="minimum_qualification" value="{{$job->MIN_QUALIFICATION}}" required>
             </div>
 
-            <div class="form-group col-3">
+            <div class="form-group col-6 col-lg-3">
                 <label for="ssc_score">SSC Score (%)</label>
                 <input type="number" class="form-control" id="ssc_score" placeholder="ex. 60" name="ssc_score" min="0" max="100" value="{{$job->REQ_SSC_SCORE}}" required>
             </div>
-            <div class="form-group col-3">
+            <div class="form-group col-6 col-lg-3">
                 <label for="hsc_score">HSC Score (%)</label>
                 <input type="number" class="form-control" id="hsc_score" placeholder="ex. 60" name="hsc_score" min="0" max="100" value="{{$job->REQ_HSC_SCORE}}" required>
             </div>
-            <div class="form-group col-3">
+            <div class="form-group col-6 col-lg-3">
                 <label for="ug_score">UG Score (CGPA)</label>
                 <input type="number" class="form-control" id="ug_score" placeholder="ex. 8.5" name="ug_score" min="0" max="10" value="{{$job->REQ_UG_SCORE}}" required>
             </div>
-            <div class="form-group col-3">
+            <div class="form-group col-6 col-lg-3">
                 <label for="pg_score">PG Score (CGPA)</label>
                 <input type="number" class="form-control" id="pg_score" placeholder="ex. 8.5" name="pg_score" min="0" max="10" value="{{$job->REQ_PG_SCORE}}" required>
             </div>
@@ -83,7 +83,7 @@
         </div>
         <div class="row justify-content-center align-items-center">
 
-            <div class="form-group col-4">
+            <div class="form-group col-12 col-lg-4">
                 <label for="job_university">University</label>
 
                 <select id="job_university" class="form-control" name="job_university" onchange="getCollege()" required>
@@ -98,7 +98,7 @@
                     @endforeach
                 </select>
             </div>
-            <div class="form-group col-4">
+            <div class="form-group col-6 col-lg-4">
                 <label for="job_college">College</label>
 
                 <select id="job_college" class="form-control" name="job_college" onchange="getDepartment()" required>
@@ -113,7 +113,7 @@
                     @endforeach
                 </select>
             </div>
-            <div class="form-group col-4">
+            <div class="form-group col-6 col-lg-4">
                 <label for="job_department">Department</label>
 
                 <select id="job_department" class="form-control" name="job_department" required>
@@ -134,16 +134,16 @@
         <div class="row justify-content-center align-items-center g-2">
             
 
-            <div class="form-group col-4">
+            <div class="form-group col-6 col-lg-4">
                 <label for="start_date">Start Date</label>
                 <input type="date" class="form-control" id="start_date"  name="start_date" value="{{$job->REG_START_DATE}}" required>
             </div>
-            <div class="form-group col-4">
+            <div class="form-group col-6 col-lg-4">
                 <label for="end_date">End Date</label>
                 <input type="date" class="form-control" id="end_date"  name="end_date" value="{{$job->REG_END_DATE}}" required>
             </div>
 
-            <div class="form-group col-4">
+            <div class="form-group col-12 col-lg-4">
                 <label for="job_status">Status</label>
 
                 <select id="job_status" class="form-control" name="job_status"  required>
