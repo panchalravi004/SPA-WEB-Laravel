@@ -64,7 +64,7 @@
                 </tfoot>
                 <tbody>
                     @foreach ($faculty as $f)
-                        @if ($f->LOGIN_USER_ROLE == "ADMIN")
+                        @if ($f->ID == getUser()->ID)
                             @continue
                         @endif
                         <tr>
@@ -93,6 +93,33 @@
         </div>
     </div>
 </div>
+
+<!-- Content Row -->
+<div class="row">
+
+    <!-- Content Column -->
+    <div class="col-lg-6 mb-4">
+        <!-- Collapsable Card Example -->
+        <div class="card shadow mb-4">
+            <!-- Card Header - Accordion -->
+            <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse"
+                role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                <h6 class="m-0 font-weight-bold text-primary">Faculty Information</h6>
+            </a>
+            <!-- Card Content - Collapse -->
+            <div class="collapse show" id="collapseCardExample">
+                <div class="card-body">
+                    In Faculty information status show the faculty <strong>login status</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6 mb-4">
+
+    </div>
+</div>
+
 <script>
 
     function updateStatus(index,loginId) {
