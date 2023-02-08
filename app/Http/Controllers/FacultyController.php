@@ -66,7 +66,7 @@ class FacultyController extends Controller
             
             $faculty = DB::table('FACULTY_OR_TPO_MASTER')
             ->leftJoin('LOGIN_MASTER','FACULTY_OR_TPO_MASTER.FACULTY_ID','=','LOGIN_MASTER.USER_ID')
-            ->select('FACULTY_OR_TPO_MASTER.*','LOGIN_MASTER.ID as LOGIN_USER_ID','LOGIN_MASTER.USER_EMAIL')
+            ->select('FACULTY_OR_TPO_MASTER.*','LOGIN_MASTER.ID as LOGIN_USER_ID','LOGIN_MASTER.USER_EMAIL','LOGIN_MASTER.USER_ROLE as LOGIN_USER_ROLE')
             ->where('FACULTY_OR_TPO_MASTER.ID','=',$id)
             ->get()[0];
 
@@ -90,13 +90,13 @@ class FacultyController extends Controller
     }
 
     public function createFaculty(Request $request){
-        $role = "FACULTY";
+        // $role = "FACULTY";
 
         // return $request;
 
         $login = new Login();
 
-        $login->USER_ROLE = $role;
+        $login->USER_ROLE = $request['faculty_role'];
         $login->USER_ID = $request['faculty_id'];
         $login->USER_PASS = md5($request['faculty_id']);
         $login->USER_EMAIL = $request['faculty_email'];
@@ -123,17 +123,17 @@ class FacultyController extends Controller
 
         }
         
-        return $request;
+        return back();
     }
 
     public function updateFaculty(Request $request,$loginId,$facultyId){
-        $role = "FACULTY";
+        // $role = "FACULTY";
 
         // return $request;
 
         $login = Login::find($loginId);
 
-        $login->USER_ROLE = $role;
+        $login->USER_ROLE = $request['faculty_role'];
         $login->USER_ID = $request['faculty_id'];
         $login->USER_PASS = md5($request['faculty_id']);
         $login->USER_EMAIL = $request['faculty_email'];
@@ -160,7 +160,7 @@ class FacultyController extends Controller
 
         }
         
-        return redirect()->back();
+        return back();
     }
 
     function deleteFaculty(Request $request,$loginId)
@@ -170,6 +170,7 @@ class FacultyController extends Controller
         if($login){
             return redirect()->back()->withError("Faculty Deleted Successfully !");
         }
+        return back();
     }
 
     function updateStatusFaculty(Request $request,$loginId,$status)

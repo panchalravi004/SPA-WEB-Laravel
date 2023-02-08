@@ -97,5 +97,7 @@ class CollegeController extends Controller
         if($college){
             return redirect()->back()->withError("College Deleted Successfully !");
         }
+
+        return back();
     }
 }

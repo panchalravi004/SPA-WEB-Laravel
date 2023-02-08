@@ -319,6 +319,7 @@ class StudentController extends Controller
         if($login){
             return redirect()->back()->withError("Student Deleted Successfully !");
         }
+        return back();
     }
 
     function updateStatusStudent(Request $request,$loginId,$status)

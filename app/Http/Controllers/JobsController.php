@@ -138,6 +138,7 @@ class JobsController extends Controller
         if($job){
             return redirect()->back()->withError("Job Deleted Successfully !");
         }
+        return back();
     }
 
     function updateStatusJob(Request $request,$id,$status)

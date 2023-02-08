@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 
 if(!function_exists('getMonths')){
     function getMonths()
@@ -38,5 +39,18 @@ if(!function_exists('getSemesters')){
         );
 
         return $sem;
+    }
+}
+
+if(!function_exists('getUser')){
+    function getUser()
+    {
+        $admin = DB::table('LOGIN_MASTER')
+            ->leftJoin('FACULTY_OR_TPO_MASTER','LOGIN_MASTER.USER_ID','=','FACULTY_OR_TPO_MASTER.FACULTY_ID')
+            ->select('LOGIN_MASTER.*','FACULTY_OR_TPO_MASTER.*')
+            ->where('LOGIN_MASTER.ID','=',session()->get('aid'))
+            ->get()[0];
+
+        return $admin;
     }
 }

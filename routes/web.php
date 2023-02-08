@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CollegeController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\DashboardController;
@@ -25,8 +26,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware([AdminLogout::class])->group(function(){
 
-    Route::get('/login',[DashboardController::class,'login'])->name('login_page');
-    Route::post('/login',[DashboardController::class,'doLogin'])->name('do_login');
+    Route::group(['prefix'=>'Admin'],function(){
+
+        Route::get('/login',[AuthController::class,'login'])->name('login_page');    
+        Route::post('/login',[AuthController::class,'doLogin'])->name('do_login');
+    });
 
 });
 
@@ -35,7 +39,7 @@ Route::middleware([AdminLogin::class])->group(function(){
 
     Route::group(['prefix'=>'/'],function(){
         Route::get('/',[DashboardController::class,'index'])->name('dashboard');
-        Route::get('/logout',[DashboardController::class,'logout'])->name('logout');
+        Route::get('/logout',[AuthController::class,'logout'])->name('logout');
     });
     
     Route::group(['prefix'=>'Student'],function(){

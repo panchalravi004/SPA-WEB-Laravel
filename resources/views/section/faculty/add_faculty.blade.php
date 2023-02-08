@@ -135,6 +135,14 @@
                     <option value="0">No</option>
                 </select>
             </div>
+            <div class="form-group col-3">
+                <label for="faculty_role">Role</label>
+
+                <select class="form-control" name="faculty_role" id="faculty_role" required>
+                    <option value="FACULTY" selected>Faculty</option>
+                    <option value="ADMIN">Admin</option>
+                </select>
+            </div>
         </div>
         
         <!-- Divider -->

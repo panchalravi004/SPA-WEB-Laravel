@@ -87,6 +87,7 @@ class DepartmentController extends Controller
         if($department){
             return redirect()->back()->withError("Department Deleted Successfully !");
         }
+        return back();
     }
 
     public function addDepartmentInCollege(Request $request)
@@ -121,6 +122,7 @@ class DepartmentController extends Controller
         if($departmentInCollege){
             return redirect()->back()->withError("Department Removed Successfully !");
         }
+        return back();
     }
 
 }

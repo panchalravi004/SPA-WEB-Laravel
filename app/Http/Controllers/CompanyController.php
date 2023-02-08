@@ -47,7 +47,7 @@ class CompanyController extends Controller
     }
     public function editPage($id){
 
-        // try {
+        try {
             
             $country = DB::table('COUNTRY_MASTER')->get();
 
@@ -69,10 +69,10 @@ class CompanyController extends Controller
 
             return view('section/company/edit_company')->with($data);
 
-        // } catch (Exception $e) {
+        } catch (Exception $e) {
             
-        //     return view('error/404');
-        // }
+            return view('error/404');
+        }
 
     }
 
@@ -131,5 +131,6 @@ class CompanyController extends Controller
         if($login){
             return redirect()->back()->withError("Company Deleted Successfully !");
         }
+        return back();
     }
 }

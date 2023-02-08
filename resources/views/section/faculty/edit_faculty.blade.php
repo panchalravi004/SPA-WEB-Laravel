@@ -157,6 +157,14 @@
                     <option value="0" @if($faculty->CAN_REJECT_JOB_APPLICATION == "0") selected @else @endif>No</option>
                 </select>
             </div>
+            <div class="form-group col-3">
+                <label for="faculty_role">Role</label>
+
+                <select class="form-control" name="faculty_role" id="faculty_role" required>
+                    <option value="FACULTY" @if($faculty->LOGIN_USER_ROLE == "FACULTY") selected @else @endif >Faculty</option>
+                    <option value="ADMIN" @if($faculty->LOGIN_USER_ROLE == "ADMIN") selected @else @endif >Admin</option>
+                </select>
+            </div>
         </div>
         
         <!-- Divider -->
