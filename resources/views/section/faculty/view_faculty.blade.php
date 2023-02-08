@@ -64,6 +64,9 @@
                 </tfoot>
                 <tbody>
                     @foreach ($faculty as $f)
+                        @if ($f->LOGIN_USER_ROLE == "ADMIN")
+                            @continue
+                        @endif
                         <tr>
                             <td>{{$f->FACULTY_ID}}</td>
                             <td>{{$f->FACULTY_NAME}}</td>

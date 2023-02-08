@@ -11,16 +11,17 @@ use Illuminate\Support\Facades\DB;
 class FacultyController extends Controller
 {
     public function index(){
+        // ->leftJoin('LOGIN_MASTER', function ($join){
+        //     $join->on('FACULTY_OR_TPO_MASTER.FACULTY_ID', '=', 'LOGIN_MASTER.USER_ID')
+        //     ->where('LOGIN_MASTER.USER_ROLE', '=', 'FACULTY');
+        // })
 
         try {
             
             $faculty = DB::table('FACULTY_OR_TPO_MASTER')
             ->leftJoin('COLLEGE_MASTER', 'FACULTY_OR_TPO_MASTER.COLLEGE_ID', '=', 'COLLEGE_MASTER.COLLEGE_ID')
             ->leftJoin('DEPT_MASTER', 'FACULTY_OR_TPO_MASTER.DEPT_ID', '=', 'DEPT_MASTER.DEPT_ID')
-            ->leftJoin('LOGIN_MASTER', function ($join){
-                $join->on('FACULTY_OR_TPO_MASTER.FACULTY_ID', '=', 'LOGIN_MASTER.USER_ID')
-                ->where('LOGIN_MASTER.USER_ROLE', '=', 'FACULTY');
-            })
+            ->leftJoin('LOGIN_MASTER','FACULTY_OR_TPO_MASTER.FACULTY_ID', '=', 'LOGIN_MASTER.USER_ID')
             ->select(
                 'FACULTY_OR_TPO_MASTER.ID',
                 'FACULTY_OR_TPO_MASTER.FACULTY_ID',
@@ -28,6 +29,7 @@ class FacultyController extends Controller
                 'COLLEGE_MASTER.COLLEGE_NAME as COLLEGE_NAME',
                 'DEPT_MASTER.DEPT_NAME as DEPT_NAME',
                 'LOGIN_MASTER.ID as LOGIN_USER_ID',
+                'LOGIN_MASTER.USER_ROLE as LOGIN_USER_ROLE',
                 'LOGIN_MASTER.USER_STATUS as USER_STATUS')
             ->get();
     
