@@ -2,6 +2,8 @@
 
 @section('content')
 
+
+
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
@@ -94,7 +96,7 @@
         <div class="card shadow mb-4">
             <!-- Card Header - Dropdown -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Monthly Placement</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Monthly Job Post</h6>
                 <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -112,8 +114,8 @@
             </div>
             <!-- Card Body -->
             <div class="card-body">
-                <div class="chart-area">
-                    <canvas id="myAreaChart"></canvas>
+                <div class="chart-bar">
+                    <canvas id="myBarChart"></canvas>
                 </div>
             </div>
         </div>
@@ -153,9 +155,9 @@
                     <span class="mr-2">
                         <i class="fas fa-circle text-success"></i> Not Placed
                     </span>
-                    <span class="mr-2">
+                    {{-- <span class="mr-2">
                         <i class="fas fa-circle text-info"></i> Others
-                    </span>
+                    </span> --}}
                 </div>
             </div>
         </div>
@@ -174,5 +176,10 @@
 
     </div>
 </div>
+
+<script>
+    var jobPostData = <?php echo json_encode($jobPost);?>;
+    var studentRatio = <?php echo json_encode($studentRatio);?>;
+</script>
 
 @endsection

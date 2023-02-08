@@ -66,14 +66,29 @@ Route::group(['prefix'=>'Jobs'],function(){
 
 Route::group(['prefix'=>'University'],function(){
     Route::get('/',[UniversityController::class,'index'])->name('view_university');
+    Route::get('/edit-page/{id}',[UniversityController::class,'editPage'])->name('view_edit_page_university');
+    Route::post('/create',[UniversityController::class,'createUniversity'])->name('create_university');
+    Route::post('/update/{id}',[UniversityController::class,'updateUniversity'])->name('update_university');
+    Route::get('/delete/{id}',[UniversityController::class,'deleteUniversity'])->name('delete_university');
 });
 
 Route::group(['prefix'=>'College'],function(){
     Route::get('/',[CollegeController::class,'index'])->name('view_college');
+    Route::get('/edit-page/{id}',[CollegeController::class,'editPage'])->name('view_edit_page_college');
+    Route::post('/create',[CollegeController::class,'createCollege'])->name('create_college');
+    Route::post('/update/{id}',[CollegeController::class,'updateCollege'])->name('update_college');
+    Route::get('/delete/{id}',[CollegeController::class,'deleteCollege'])->name('delete_college');
 });
 
 Route::group(['prefix'=>'Department'],function(){
     Route::get('/',[DepartmentController::class,'index'])->name('view_department');
+    Route::get('/edit-page/{id}',[DepartmentController::class,'editPage'])->name('view_edit_page_dept_in_college');
+    Route::post('/create',[DepartmentController::class,'createDepartment'])->name('create_department');
+    Route::get('/delete/{id}',[DepartmentController::class,'deleteDepartment'])->name('delete_department');
+    Route::get('/update',[DepartmentController::class,'updateDepartment'])->name('update_department');
+    Route::post('/add-dept-in-college',[DepartmentController::class,'addDepartmentInCollege'])->name('add_department_in_college');
+    Route::post('/update-dept-in-college/{id}',[DepartmentController::class,'updateDepartmentInCollege'])->name('update_department_in_college');
+    Route::get('/remove-dept-from-college/{id}',[DepartmentController::class,'removeDepartmentFromCollege'])->name('remove_department_from_college');
 });
 
 

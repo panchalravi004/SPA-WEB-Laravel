@@ -87,7 +87,7 @@
             <div class="form-group col-2">
                 <label for="student_state">State</label>
 
-                <select class="form-control" name="student_state" id="student_state" onclick="getCity()" >
+                <select class="form-control" name="student_state" id="student_state" onchange="getCity()" >
                     <option value="none" selected disabled hidden>Select State</option>
                     
                 </select>

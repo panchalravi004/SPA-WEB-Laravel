@@ -5,6 +5,7 @@
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h4 mb-0 text-gray-800">Manage Department</h1>
+
     <a href="" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm" data-toggle="modal" data-target="#showDepartment">
         <i class="fa fa-eye fa-sm text-white-50" aria-hidden="true"></i>
         Show Department
@@ -92,12 +93,12 @@
                                 <td>{{$d->COLLEGE_NAME}}</td>
                                 <td>{{$d->DEPT_NAME}}</td>
                                 <td>
-                                    <a href="" class="btn btn-success btn-sm">
+                                    <a href=" {{ route('view_edit_page_dept_in_college', ['id'=>$d->ID]) }} " class="btn btn-success btn-sm">
                                         <i class="fas fa-user-edit "></i>
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="" class="btn btn-danger btn-sm">
+                                    <a href=" {{ route('remove_department_from_college', ['id'=>$d->ID]) }} " onclick="return confirm('Are you sure ?')" class="btn btn-danger btn-sm">
                                         <i class="fas fa-trash-alt "></i>
                                     </a>
                                 </td>
@@ -154,12 +155,12 @@
                                     </td>
                                     {{-- <td>{{$d->DEPT_NAME}}</td> --}}
                                     <td>
-                                        <a href="" class="btn btn-success btn-sm">
+                                        <a class="btn btn-success btn-sm" onclick="updateDepartment('department-name-input-{{ $loop->index }}','{{$d->DEPT_ID}}')" >
                                             UPDATE
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="" class="btn btn-danger btn-sm">
+                                        <a href=" {{ route('delete_department', ['id'=>$d->DEPT_ID]) }} " onclick="return confirm('Are you sure ?')" class="btn btn-danger btn-sm">
                                             <i class="fas fa-trash-alt "></i>
                                         </a>
                                     </td>
@@ -177,7 +178,8 @@
 <!-- Add Department Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <form class="modal-content">
+        <form class="modal-content" method="post" action=" {{ route('create_department') }} ">
+            @csrf
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLongTitle">Add Department</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -188,7 +190,7 @@
 
                 <div class="row d-flex justify-content-left align-items-center">
                     <div class="form-group col-12">
-                        <label for="Department_name">Department Name</label>
+                        <label for="department_name">Department Name</label>
                         <input type="text" class="form-control" id="" placeholder="Department's Name" name="dept_name" required>
                     </div>
                 </div>
@@ -205,7 +207,10 @@
 <!-- Add Department In College Modal -->
 <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenter2Title" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <form class="modal-content">
+        <form class="modal-content" method="post" action="{{ route('add_department_in_college') }}">
+            
+            @csrf
+
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLongTitle">Add Department In College</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -216,17 +221,21 @@
 
                 <div class="row d-flex justify-content-left align-items-center">
                     <div class="form-group col-12">
-                        <label for="id_college_name">College Name</label>
-                        <select class="form-control" name="college_name" id="id_college_name" required>
+                        <label for="college_name">College Name</label>
+                        <select class="form-control" name="college_name" id="college_name" required>
                             <option value="none" selected disabled hidden>Select</option>
-                            
+                            @foreach ($college as $c)
+                                <option value="{{$c->COLLEGE_ID}}"> {{$c->COLLEGE_NAME}} </option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group col-12">
-                        <label for="id_department_name">Department Name</label>
-                        <select class="form-control" name="department_name" id="id_department_name" required>
+                        <label for="department_name">Department Name</label>
+                        <select class="form-control" name="department_name" id="department_name" required>
                             <option value="none" selected disabled hidden>Select</option>
-                            
+                            @foreach ($department as $d)
+                                <option value="{{$d->DEPT_ID}}"> {{$d->DEPT_NAME}} </option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -244,14 +253,35 @@
 
 <script>
 
-    function enableDepartmentNameInput (inputId) {
+    function enableDepartmentNameInput(inputId) {
         var a = document.getElementById(inputId).disabled;
         if (a) {
             document.getElementById(inputId).disabled = false;
         } else {
             document.getElementById(inputId).disabled = true;
         }
-     }
+    }
+
+
+    function updateDepartment(inputId,id) {
+        var input = document.getElementById(inputId);
+
+        var object = {
+            "id":id,
+            "dept_name":input.value
+        }
+
+        $.ajax({
+            type: "get",
+            url: "http://127.0.0.1:8000/Department/update",
+            data: object,
+            dataType: "json",
+            success: function (response) {
+                console.log(response);
+                document.getElementById(inputId).disabled = true;
+            }
+        });
+    }
 
 </script>
 

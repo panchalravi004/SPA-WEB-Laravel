@@ -78,7 +78,7 @@
                                     </a>
                                 </td>
                                 <td>
-                                    <a href=" {{ route('delete_job', ['id'=>$j->JOB_ID]) }} " class="btn btn-danger btn-sm">
+                                    <a href=" {{ route('delete_job', ['id'=>$j->JOB_ID]) }} " onclick="return confirm('Are you sure ?')" class="btn btn-danger btn-sm">
                                         <i class="fas fa-trash-alt "></i>
                                     </a>
                                 </td>
