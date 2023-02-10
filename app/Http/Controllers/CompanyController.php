@@ -89,7 +89,7 @@ class CompanyController extends Controller
         $company->WEB_DOMAIN = $request['web_domain'];
         $company->ADDRESS = $request['address'];
         $company->CITY_ID = $request['company_city'];
-        $company->CREATOR_ID = '12345678';
+        $company->CREATOR_ID = getUser()->USER_ID;
 
         if($company->save()){
 

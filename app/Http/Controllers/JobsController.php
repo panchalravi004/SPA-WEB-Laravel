@@ -94,7 +94,7 @@ class JobsController extends Controller
         $job->UNIV_ID = $request['job_university'];
         $job->COLLEGE_ID = $request['job_college'];
         $job->DEPT_ID = $request['job_department'];
-        $job->CREATOR_ID = '12345678';
+        $job->CREATOR_ID = getUser()->USER_ID;
 
         if($job->save()){
             return redirect()->back()->withError("Job Created Successfully !");

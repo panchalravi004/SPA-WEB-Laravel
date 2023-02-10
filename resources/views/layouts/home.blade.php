@@ -12,7 +12,7 @@
     <title>SPA - Dashboard</title>
 
     <!-- Favicon icon -->
-    <link rel="icon" type="text" sizes="16x16" href="img/favicon.png">
+    <link rel="icon" type="text" sizes="16x16" href=" {{ url('img/favicon.png') }} ">
 
     <!-- Custom fonts for this template-->
     <link href="{{ url('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
