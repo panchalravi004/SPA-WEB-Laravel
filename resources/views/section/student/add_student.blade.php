@@ -307,11 +307,11 @@
                     <option value="cgpa">CGPA</option>
                 </select>
             </div>
-            <div class="form-group col-4 col-lg-2">
+            <div class="form-group col-4 col-lg-3">
                 <label for="student_pg_score">PG Score</label>
                 <input type="text" class="form-control" placeholder="PG Marks" name="student_pg_score" id="student_pg_score">
             </div>
-            <div class="form-group col-4 col-lg-2">
+            <div class="form-group col-4 col-lg-3">
                 <label for="student_pg_year">PG Pass Year</label>
                 <input type="text" class="form-control" placeholder="PG Pass Year" name="student_pg_year" id="student_pg_year">
             </div>
