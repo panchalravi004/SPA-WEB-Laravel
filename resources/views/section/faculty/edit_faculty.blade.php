@@ -16,7 +16,7 @@
             </div>
         @endif
 
-        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+        <a href="{{ url()->previous() }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
             <i class="fa fa-angle-left fa-sm text-white-50"></i>
             Back
         </a>
