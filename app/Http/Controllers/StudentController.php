@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\DB;
 use App\Imports\StudentsImport;
 use Maatwebsite\Excel\Facades\Excel;
 
+use function PHPUnit\Framework\isNan;
+use function PHPUnit\Framework\isNull;
+
 class StudentController extends Controller
 {
     public function index(){
@@ -107,7 +110,7 @@ class StudentController extends Controller
         // Validation Of Field
         $request->validate(
             [
-                'student_id'=>'required',
+                'student_id'=>'required|unique:LOGIN_MASTER,USER_ID',
                 'student_name'=>'required',
                 'student_email'=>'required',
                 'student_mob_no'=>'required',
@@ -233,6 +236,31 @@ class StudentController extends Controller
     }
 
     public function updateStudent(Request $request,$loginId,$studentId){
+
+        $request->validate(
+            [
+                'student_id'=>'required|unique:LOGIN_MASTER,USER_ID',
+                'student_name'=>'required',
+                'student_email'=>'required|email',
+                'student_mob_no'=>'required',
+                'student_street'=>'required',
+                'student_primary_skill'=>'required',
+                'student_academic_session'=>'required',
+                'student_session_start_month'=>'required',
+                'student_sem'=>'required',
+                'student_academic_level'=>'required',
+                'student_ssc_score_type'=>'required',
+                'student_ssc_score'=>'required',
+                'student_hsc_score'=>'required',
+                'student_hsc_stream'=>'required',
+                'student_ssc_year'=>'required',
+                'student_ug_year'=>'required',
+                'student_pg_stream'=>'required',
+                'student_pg_year'=>'required',
+            ]
+        );
+
+
         $role = "STUDENT";
 
         $login = Login::find($loginId);

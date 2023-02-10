@@ -31,11 +31,17 @@
             <div class="form-group col-12 col-lg-4">
                 <label for="student_id">Student Id </label>
                 <input type="text" class="form-control" placeholder="Student Id" name="student_id" id="student_id" >
-
+                <span class="text-danger">
+                <span class="text-danger">
+                    @error('student_id')
+                        {{$message}}
+                    @enderror
+                </span>
             </div>
             <div class="form-group col-12 col-lg-4">
                 <label for="student_name">Name</label>
                 <input type="text" class="form-control" placeholder="Student's Name" name="student_name" id="student_name" >
+                <span class="text-danger">
                 <span class="text-danger">
                     @error('student_name')
                     {{$message}}
@@ -45,6 +51,7 @@
             <div class="form-group col-12 col-lg-4">
                 <label for="student_email">Email</label>
                 <input type="text" pattern="[^ @]*@[^ @]*" validate=":true" class="form-control" placeholder="Email" name="student_email" id="student_email">
+                <span class="text-danger">
                 <span class="text-danger">
                     @error('student_email')
                     {{$message}}

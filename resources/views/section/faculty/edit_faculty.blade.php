@@ -29,18 +29,30 @@
             <div class="form-group col-12 col-lg-4">
                 <label for="faculty_id">Faculty Id </label>
                 <input type="text" class="form-control" placeholder="Faculty Id" name="faculty_id" id="faculty_id" value="{{$faculty->FACULTY_ID}}" required>
-
+                <span class="text-danger">
+                    @error('faculty_id')
+                        {{$message}}
+                    @enderror
+                </span>
             </div>
             <div class="form-group col-12 col-lg-4">
                 <label for="faculty_name">Name</label>
                 <input type="text" class="form-control" placeholder="Faculty Name" name="faculty_name" id="faculty_name" value="{{$faculty->FACULTY_NAME}}" required>
-
+                <span class="text-danger">
+                    @error('faculty_name')
+                        {{$message}}
+                    @enderror
+                </span>
             </div>
             
             <div class="form-group col-12 col-lg-4">
                 <label for="faculty_email">Email</label>
                 <input type="email" class="form-control" placeholder="Faculty Name" name="faculty_email" id="faculty_email" value="{{$faculty->USER_EMAIL}}" required>
-
+                <span class="text-danger">
+                    @error('faculty_email')
+                        {{$message}}
+                    @enderror
+                </span>
             </div>
             
         </div>
@@ -56,12 +68,22 @@
                     <option value="F" @if($faculty->FACULTY_GENDER == "F" ) selected @else @endif>Female</option>
                     <option value="O" @if($faculty->FACULTY_GENDER == "O" ) selected @else @endif>Other</option>
                 </select>
+                <span class="text-danger">
+                    @error('faculty_gender')
+                        {{$message}}
+                    @enderror
+                </span>
             </div>
             
             <div class="form-group col-12 col-lg-8">
                 <label for="faculty_mob_no">Mobile No.</label>
                 <!-- <input type="text" pattern="[6-9]{1}[0-9]{9}" class="form-control" placeholder="Contact no of Student" name="stud_mob_no" id="id_stud_mob_no" required> -->
                 <input type="text" class="form-control" placeholder="Contact no of Faculty" name="faculty_mob_no" id="faculty_mob_no" value="{{$faculty->FACULTY_MOB}}" required>
+                <span class="text-danger">
+                    @error('faculty_mob_no')
+                        {{$message}}
+                    @enderror
+                </span>
             </div>
         </div>
 
@@ -87,6 +109,11 @@
                         @endif
                     @endforeach
                 </select>
+                <span class="text-danger">
+                    @error('faculty_university')
+                        {{$message}}
+                    @enderror
+                </span>
             </div>
             <div class="form-group col-6 col-lg-4">
                 <label for="faculty_college">College Name</label>
@@ -103,6 +130,11 @@
                         @endif
                     @endforeach
                 </select>
+                <span class="text-danger">
+                    @error('faculty_college')
+                        {{$message}}
+                    @enderror
+                </span>
             </div>
             <div class="form-group col-6 col-lg-4">
                 <label for="faculty_department">Department</label>
@@ -119,6 +151,11 @@
                         @endif
                     @endforeach
                 </select>
+                <span class="text-danger">
+                    @error('faculty_department')
+                        {{$message}}
+                    @enderror
+                </span>
             </div>
         </div>
 

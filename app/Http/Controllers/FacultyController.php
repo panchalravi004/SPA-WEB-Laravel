@@ -90,9 +90,18 @@ class FacultyController extends Controller
     }
 
     public function createFaculty(Request $request){
-        // $role = "FACULTY";
-
-        // return $request;
+        
+        $request->validate([
+            'faculty_role'=>'required',
+            'faculty_id'=>'required|unique:LOGIN_MASTER,USER_ID',
+            'faculty_email'=>'required|email',
+            'faculty_name'=>'required',
+            'faculty_gender'=>'required',
+            'faculty_mob_no'=>'required',
+            'faculty_university'=>'required',
+            'faculty_college'=>'required',
+            'faculty_department'=>'required',
+        ]);
 
         $login = new Login();
 
@@ -127,9 +136,17 @@ class FacultyController extends Controller
     }
 
     public function updateFaculty(Request $request,$loginId,$facultyId){
-        // $role = "FACULTY";
-
-        // return $request;
+        $request->validate([
+            'faculty_role'=>'required',
+            'faculty_id'=>'required|unique:LOGIN_MASTER,USER_ID',
+            'faculty_email'=>'required|email',
+            'faculty_name'=>'required',
+            'faculty_gender'=>'required',
+            'faculty_mob_no'=>'required',
+            'faculty_university'=>'required',
+            'faculty_college'=>'required',
+            'faculty_department'=>'required',
+        ]);
 
         $login = Login::find($loginId);
 

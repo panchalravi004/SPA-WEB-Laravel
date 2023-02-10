@@ -18,8 +18,10 @@
             </div>
         @endif
 
-        <a href="" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                class="fas fa-arrow-left fa-sm text-white-50"></i> Back</a>
+        <a href="{{ url()->previous() }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+            <i class="fa fa-angle-left fa-sm text-white-50"></i>
+            Back
+        </a>
     </div>
 
     {{-- Alert Messages --}}
@@ -36,7 +38,7 @@
                 <div class="form-group row">
                     
                     <div class="col-md-12 mb-3 mt-3">
-                        <p>Please Upload CSV in Given Format <a href="" target="_blank">Sample CSV Format</a></p>
+                        <p>Please Upload CSV in Given Format <a href="{{ url('file/sample-data.xlsx') }}" target="_blank">Sample CSV Format</a></p>
                     </div>
                     {{-- File Input --}}
                     <div class="col-sm-12 mb-3 mt-3 mb-sm-0">
