@@ -26,9 +26,9 @@
         <div class="col text-primary" id="spinner-label">status label</div>
     </div>
 
-    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-        <i class="fas fa-download fa-sm text-white-50"></i> 
-        Generate Report
+    <a href="{{ url()->previous() }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+        <i class="fa fa-angle-left fa-sm text-white-50"></i>
+        Back
     </a>
 </div>
 

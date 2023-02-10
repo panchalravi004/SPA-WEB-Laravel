@@ -16,7 +16,7 @@
             </div>
         @endif
 
-        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+        <a href="{{ url()->previous() }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
             <i class="fa fa-angle-left fa-sm text-white-50"></i>
             Back
         </a>
@@ -31,16 +31,25 @@
             <div class="form-group col-12 col-lg-4">
                 <label for="student_id">Student Id </label>
                 <input type="text" class="form-control" placeholder="Student Id" name="student_id" id="student_id" >
-                
+
             </div>
             <div class="form-group col-12 col-lg-4">
                 <label for="student_name">Name</label>
                 <input type="text" class="form-control" placeholder="Student's Name" name="student_name" id="student_name" >
-
+                <span class="text-danger">
+                    @error('student_name')
+                    {{$message}}
+                    @enderror
+                </span>
             </div>
             <div class="form-group col-12 col-lg-4">
                 <label for="student_email">Email</label>
                 <input type="text" pattern="[^ @]*@[^ @]*" validate=":true" class="form-control" placeholder="Email" name="student_email" id="student_email">
+                <span class="text-danger">
+                    @error('student_email')
+                    {{$message}}
+                    @enderror
+                </span>
             </div>
         </div>
         <div class="row justify-content-center align-items-center">
@@ -68,6 +77,11 @@
                 <label for="student_mob_no">Mobile No.</label>
                 <!-- <input type="text" pattern="[6-9]{1}[0-9]{9}" class="form-control" placeholder="Contact no of Student" name="stud_mob_no" id="id_stud_mob_no" > -->
                 <input type="text" class="form-control" placeholder="Contact no of Student" name="student_mob_no" id="student_mob_no" >
+                <span class="text-danger">
+                    @error('student_mob_no')
+                    {{$message}}
+                    @enderror
+                </span>
             </div>
         </div>
         <div class="row justify-content-center align-items-center">
@@ -97,8 +111,13 @@
 
                 <select class="form-control" name="student_city" id="student_city" >
                     <option value="none" selected disabled hidden>Select</option>
-                    
+
                 </select>
+                <span class="text-danger">
+                    @error('student_city')
+                    {{$message}}
+                    @enderror
+                </span>
             </div>
             <div class="form-group col-6 col-lg-2">
                 <label for="student_pincode">Pin code</label>
@@ -108,6 +127,11 @@
             <div class="form-group col-12 col-lg-4">
                 <label for="student_street">Address</label>
                 <input type="text" class="form-control" placeholder="Address" name="student_street" id="student_street" >
+                <span class="text-danger">
+                    @error('student_street')
+                    {{$message}}
+                    @enderror
+                </span>
             </div>
 
         </div>
@@ -126,8 +150,12 @@
                     @foreach ($skills as $s)
                         <option value="{{$s->SKILL_ID}}"> {{$s->SKILL}} </option>
                     @endforeach
-
                 </select>
+                <span class="text-danger">
+                    @error('student_primary_skill')
+                    {{$message}}
+                    @enderror
+                </span>
             </div>
 
             <div class="form-group col-6 col-lg-2">
@@ -153,6 +181,11 @@
             <div class="form-group col-6 col-lg-2">
                 <label for="student_academic_session">Academic Session</label>
                 <input type="text" class="form-control" placeholder="Enter Student Acadmic Session" name="student_academic_session" id="student_academic_session" >
+                <span class="text-danger">
+                    @error('student_academic_session')
+                    {{$message}}
+                    @enderror
+                </span>
             </div>
             <div class="form-group col-6 col-lg-2">
                 <label for="student_session_start_month">Session Start Month</label>
@@ -163,10 +196,20 @@
                         <option value="{{$key}}">{{$value}}</option>
                     @endforeach
                 </select>
+                <span class="text-danger">
+                    @error('student_session_start_month')
+                    {{$message}}
+                    @enderror
+                </span>
             </div>
             <div class="form-group col-6 col-lg-2">
                 <label for="student_academic_level">Academic Level</label>
                 <input type="text" class="form-control" placeholder="Acadmic Level" name="student_academic_level" id="student_academic_level" >
+                <span class="text-danger">
+                    @error('student_academic_level')
+                    {{$message}}
+                    @enderror
+                </span>
             </div>
 
         </div>
@@ -210,6 +253,11 @@
                         <option value="{{$key}}">{{$value}}</option>                            
                     @endforeach
                 </select>
+                <span class="text-danger">
+                    @error('student_sem')
+                    {{$message}}
+                    @enderror
+                </span>
             </div>
             <div class="form-group col-6 col-lg-2">
                 <label for="student_section">Student Section</label>
@@ -223,14 +271,29 @@
                     <option value="percentage">Percentage</option>
                     <option value="cgpa">CGPA</option>
                 </select>
+                <span class="text-danger">
+                    @error('student_ssc_score_type')
+                    {{$message}}
+                    @enderror
+                </span>
             </div>
             <div class="form-group col-4 col-lg-4">
                 <label for="student_ssc_score">SSC Score</label>
                 <input type="text" class="form-control" placeholder="SSC Marks" name="student_ssc_score" id="student_ssc_score" >
+                <span class="text-danger">
+                    @error('student_ssc_score')
+                    {{$message}}
+                    @enderror
+                </span>
             </div>
             <div class="form-group col-4 col-lg-4">
                 <label for="student_ssc_year">SSC Pass Year</label>
                 <input type="text" class="form-control" placeholder="SSC Pass Year" name="student_ssc_year" id="student_ssc_year" >
+                <span class="text-danger">
+                    @error('student_ssc_year')
+                    {{$message}}
+                    @enderror
+                </span>
             </div>
             
         </div>
@@ -243,6 +306,11 @@
                         <option value="{{$c->COURSE_ID}}">{{$c->COURSE_NAME}}</option>
                     @endforeach
                 </select>
+                <span class="text-danger">
+                    @error('student_hsc_stream')
+                    {{$message}}
+                    @enderror
+                </span>
             </div>
             <div class="form-group col-4 col-lg-2">
                 <label for="student_hsc_score_type">HSC Score In</label>
@@ -254,6 +322,11 @@
             <div class="form-group col-4 col-lg-3">
                 <label for="student_hsc_score">HSC Score</label>
                 <input type="text" class="form-control" placeholder="HSC Marks" name="student_hsc_score" id="student_hsc_score" >
+                <span class="text-danger">
+                    @error('student_hsc_score')
+                    {{$message}}
+                    @enderror
+                </span>
             </div>
             <div class="form-group col-4 col-lg-3">
                 <label for="student_hsc_year">Hsc Pass Year</label>
@@ -285,6 +358,11 @@
             <div class="form-group col-4 col-lg-3">
                 <label for="student_ug_year">UG Pass Year</label>
                 <input type="text" class="form-control" placeholder="UG Year" name="student_ug_year" id="student_ug_year" >
+                <span class="text-danger">
+                    @error('student_ug_year')
+                    {{$message}}
+                    @enderror
+                </span>
             </div>
             
         </div>
@@ -297,6 +375,11 @@
                         <option value="{{$c->COURSE_ID}}">{{$c->COURSE_NAME}}</option>
                     @endforeach
                 </select>
+                <span class="text-danger">
+                    @error('student_pg_stream')
+                    {{$message}}
+                    @enderror
+                </span>
 
             </div>
             <div class="form-group col-4 col-lg-2">
@@ -314,6 +397,11 @@
             <div class="form-group col-4 col-lg-3">
                 <label for="student_pg_year">PG Pass Year</label>
                 <input type="text" class="form-control" placeholder="PG Pass Year" name="student_pg_year" id="student_pg_year">
+                <span class="text-danger">
+                    @error('student_pg_year')
+                    {{$message}}
+                    @enderror
+                </span>
             </div>
             
         </div>
