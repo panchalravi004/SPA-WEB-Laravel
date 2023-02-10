@@ -78,7 +78,7 @@
                         <h6 class="collapse-header">Student Management :</h6>
                         <a class="collapse-item" href="{{ route('view_add_page_student') }}">Add Student</a>
                         <a class="collapse-item" href="{{ route('view_student') }}">View Student</a>
-                        <a class="collapse-item" href="">Bulk Entry</a>
+                        <a class="collapse-item" href="{{ route('import_student') }}">Bulk Entry</a>
                     </div>
                 </div>
             </li>

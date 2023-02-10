@@ -12,4 +12,12 @@ class Login extends Model
     protected $table = "LOGIN_MASTER";
     protected $primaryKey = "ID";
     public $timestamps = false;
+
+    protected $fillable = [
+        'USER_ID',
+        'USER_ROLE',
+        'USER_PASS',
+        'USER_EMAIL',
+        'USER_STATUS'
+    ];
 }

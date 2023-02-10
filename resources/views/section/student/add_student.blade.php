@@ -31,7 +31,7 @@
             <div class="form-group col-12 col-lg-4">
                 <label for="student_id">Student Id </label>
                 <input type="text" class="form-control" placeholder="Student Id" name="student_id" id="student_id" >
-
+                
             </div>
             <div class="form-group col-12 col-lg-4">
                 <label for="student_name">Name</label>

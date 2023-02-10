@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\StudentsExport;
 use App\Models\Login;
 use App\Models\Student;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Imports\StudentsImport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class StudentController extends Controller
 {
@@ -334,6 +337,29 @@ class StudentController extends Controller
             return json_encode("FAILD");
         }
         
+    }
+
+    public function importStudent()
+    {
+        try{
+
+            return view('section/student/import');
+            
+        } catch (Exception $e) {
+            return view('error/404');
+        }
+    }
+    
+    public function uploadStudent(Request $request)
+    {
+        Excel::import(new StudentsImport, $request->file('excel_file'));
+        
+        return redirect()->back()->withError('Student Imported Successfully !');
+    }
+
+    public function exportStudent()
+    {
+        return Excel::download(new StudentsExport, 'student.xlsx');
     }
 
 }

@@ -50,6 +50,9 @@ Route::middleware([AdminLogin::class])->group(function(){
         Route::post('/update/{loginId}/{studentId}',[StudentController::class,'updateStudent'])->name('update_student');
         Route::get('/delete/{loginId}',[StudentController::class,'deleteStudent'])->name('delete_student');
         Route::get('/update-status/{loginId}/{status}',[StudentController::class,'updateStatusStudent'])->name('update_status_student');
+        Route::get('/import-excel',[StudentController::class,'importStudent'])->name('import_student');
+        Route::post('/upload-excel',[StudentController::class,'uploadStudent'])->name('upload_student');
+        Route::get('/export-excel',[StudentController::class,'exportStudent'])->name('export_student');
     });
     
     Route::group(['prefix'=>'Faculty'],function(){
