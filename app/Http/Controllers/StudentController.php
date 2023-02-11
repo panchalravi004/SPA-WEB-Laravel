@@ -239,7 +239,7 @@ class StudentController extends Controller
 
         $request->validate(
             [
-                'student_id'=>'required|unique:LOGIN_MASTER,USER_ID',
+                'student_id'=>'required',
                 'student_name'=>'required',
                 'student_email'=>'required|email',
                 'student_mob_no'=>'required',
@@ -403,6 +403,11 @@ class StudentController extends Controller
     
     public function uploadStudent(Request $request)
     {
+        $request->validate(
+            [
+                'excel_file'=>'required|file',
+            ]
+        );
         Excel::import(new StudentsImport, $request->file('excel_file'));
         
         return redirect()->back()->withError('Student Imported Successfully !');

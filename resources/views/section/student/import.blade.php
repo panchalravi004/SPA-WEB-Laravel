@@ -44,10 +44,26 @@
                     <div class="col-sm-12 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>File Input(Datasheet)</label>
                         <input type="file" class="form-control form-control-user"id="exampleFile"name="excel_file">
+                        {{-- <span class="text-danger">
+                            @error('excel_file')
+                            {{$message}}
+                            @enderror
+                        </span> --}}
 
-                        {{-- @error('file')
+                         {{-- @error('file')
                             <span class="text-danger">{{$message}}</span>
-                        @enderror --}}
+                        @enderror  --}}
+                       @if (count($errors) > 0)
+
+                        <span class="text-danger">
+                            @foreach($errors->all() as $message)
+
+                            {{$message}} <br>
+
+                          @endforeach  
+
+                        </span> 
+                        @endif
                     </div>
 
                 </div>

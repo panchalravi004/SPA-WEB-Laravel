@@ -5,6 +5,7 @@ namespace App\Imports;
 use App\Models\Department;
 use App\Models\Login;
 use App\Models\Student;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\ToModel;
@@ -21,6 +22,10 @@ class StudentsImport implements ToCollection, WithHeadingRow
 
     public function collection(Collection $rows)
     {
+        Validator::make($rows->toArray(), [
+            '*.stud_id' => 'required|unique:LOGIN_MASTER,USER_ID',
+        ])->validate();
+        
         foreach ($rows as $row) {
             $role = "STUDENT";
             

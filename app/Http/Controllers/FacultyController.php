@@ -138,7 +138,7 @@ class FacultyController extends Controller
     public function updateFaculty(Request $request,$loginId,$facultyId){
         $request->validate([
             'faculty_role'=>'required',
-            'faculty_id'=>'required|unique:LOGIN_MASTER,USER_ID',
+            'faculty_id'=>'required',
             'faculty_email'=>'required|email',
             'faculty_name'=>'required',
             'faculty_gender'=>'required',
